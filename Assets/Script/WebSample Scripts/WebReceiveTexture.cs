@@ -4,13 +4,12 @@ public class WebSample : MonoBehaviour
 {
     public Renderer targetRenderer; // 3D 오브젝트의 Renderer
     public string shaderTextureProperty = "_Img"; // 쉐이더 텍스처 변수명
-
-public string localTextureName = "testTex"; // Resources 폴더 내 텍스처 이름(확장자 제외)
+    public string localTextureName = "testTex"; // Resources 폴더 내 텍스처 이름(확장자 제외)
 
 
     private void Start()
     {
-        LoadLocalTexture();
+        // LoadLocalTexture();
     }
 
     public void SendGetFile()
