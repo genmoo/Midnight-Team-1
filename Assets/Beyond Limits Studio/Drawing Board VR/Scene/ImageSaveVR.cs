@@ -9,6 +9,8 @@ namespace BeyondLimitsStudios
     {
         public class ImageSaveVR : MonoBehaviour
         {
+            public string customSavePath = "C:/MyImages";
+            
             [SerializeField]
             private DrawingBoardTexture board;
             [SerializeField]
@@ -20,7 +22,8 @@ namespace BeyondLimitsStudios
 
             public void SaveImage()
             {
-                board.SaveImage(Application.persistentDataPath, fileName);
+                // board.SaveImage(Application.persistentDataPath, fileName);
+                board.SaveImage(customSavePath, fileName);
             }
 
             public void SetBackground()
