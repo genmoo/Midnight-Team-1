@@ -9,7 +9,7 @@ public class AudioToImageConverterAsync : MonoBehaviour
 {
     [SerializeField] private Renderer targetRenderer; // 3D 오브젝트의 Renderer
     [SerializeField] private string shaderTextureProperty = "_Img"; // 머티리얼의 텍스처 변수명
-    [SerializeField] private string audioFilePath = "Assets/Resources/sample.mp3";
+    [SerializeField] private string audioFilePath = "Assets/Resources/sample.wav";
 
     // private void Start()
     // {
