@@ -17,7 +17,7 @@ public class Mic : MonoBehaviour
     public void PlaySnd()
     {
         aud.Play();
-        SavWav.Save("/Users/yeongmu/Documents/GitHub/Midnight-Team-1/Assets/Resources/sample", aud.clip); // 저장 기능, Test라는 이름으로 저장된다
+        SavWav.Save("C:\\Users\\User\\Documents\\GitHub\\Midnight-Team-1\\Assets\\Resources//sample", aud.clip); // 저장 기능, Test라는 이름으로 저장된다
     }
 
     public void RecSnd()

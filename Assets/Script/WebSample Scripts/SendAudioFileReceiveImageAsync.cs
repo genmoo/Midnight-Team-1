@@ -20,6 +20,9 @@ public class AudioToImageConverterAsync : MonoBehaviour
     {
         try
         {
+            Debug.Log("5초 대기 중...");
+            await UniTask.Delay(TimeSpan.FromSeconds(5));
+            
             Texture2D resultTexture = await RequestAudioFileToImageAsync();
             if (resultTexture != null)
             {

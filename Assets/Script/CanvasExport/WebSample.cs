@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -16,6 +17,17 @@ public class WebSample : MonoBehaviour
     {
         Debug.Log("SendUploadFile");
         StartCoroutine(Api_UploadFile.Send(uploadTexture));
+    }
+
+
+    public void DownloadImg()
+    {
+        StartCoroutine(DelayedFunction());
+    }
+    private IEnumerator DelayedFunction()
+    {
+        yield return new WaitForSeconds(5f);
+        DownloadAndShowImages();
     }
 
     public void DownloadAndShowImages()

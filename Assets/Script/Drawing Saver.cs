@@ -6,10 +6,10 @@ using System.IO;
 public class DrawingSaver : MonoBehaviour
 {
     public RenderTexture renderTexture;
+    public WebSample webSample; // WebSample 스크립트 연결
 
     private void Awake()
     {
-        // 버튼 연결
         Button btn = GetComponent<Button>();
         if (btn != null)
         {
@@ -25,7 +25,6 @@ public class DrawingSaver : MonoBehaviour
             return;
         }
 
-        // RenderTexture를 Texture2D로 저장
         RenderTexture currentRT = RenderTexture.active;
         RenderTexture.active = renderTexture;
 
@@ -35,7 +34,7 @@ public class DrawingSaver : MonoBehaviour
 
         RenderTexture.active = currentRT;
 
-        // 저장 경로 설정: Assets/SaveDrawing/Saved_20240514_2359.png
+        // 저장 경로 설정
         string folderPath = Application.dataPath + "/SaveDrawing";
         if (!Directory.Exists(folderPath))
             Directory.CreateDirectory(folderPath);
@@ -45,5 +44,16 @@ public class DrawingSaver : MonoBehaviour
 
         File.WriteAllBytes(path, tex.EncodeToPNG());
         Debug.Log("그림 저장 완료: " + path);
+
+        // ✅ WebSample에 Texture2D 넘기기
+        if (webSample != null)
+        {
+            webSample.uploadTexture = tex;
+            Debug.Log("WebSample에 uploadTexture 설정됨");
+        }
+        else
+        {
+            Debug.LogWarning("WebSample이 연결되어 있지 않습니다.");
+        }
     }
 }

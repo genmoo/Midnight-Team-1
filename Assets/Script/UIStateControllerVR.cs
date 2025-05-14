@@ -7,6 +7,7 @@ public class UIStateControllerVR : MonoBehaviour
     public GameObject recordButton;
     public GameObject submitButton;
     public GameObject completeButton;
+    public GameObject saveButton;
 
     [Header("설명 스프라이트 UI")]
     public GameObject statusText_Recording;
@@ -25,6 +26,7 @@ public class UIStateControllerVR : MonoBehaviour
         recordButton.SetActive(true);
         submitButton.SetActive(false);
         completeButton.SetActive(false);
+        saveButton.SetActive(false);
         
         statusText_Recording.SetActive(false);
         statusText_Generating.SetActive(false);
@@ -46,6 +48,7 @@ public class UIStateControllerVR : MonoBehaviour
         recordButton.SetActive(false);
         submitButton.SetActive(false);
         completeButton.SetActive(true);
+        saveButton.SetActive(true);
     }
     
     void ShowStatus(GameObject statusUI)
